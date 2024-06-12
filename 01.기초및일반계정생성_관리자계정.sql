@@ -44,7 +44,7 @@ create user gjjang identified by 1234;
 
 -- USER 삭제
 --DROP USER 유저명  CASCAED;
-DROP USER tjoeun ;
+--DROP USER tjoeun ;
 
 
 -- insert시 생성된 유저에게 테이블스페이스에 얼마만큼의 영역을 할당할 것인지 정해줘야함
