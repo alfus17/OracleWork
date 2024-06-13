@@ -33,6 +33,7 @@ alter session set "_oracle_script" = true;
 -- 계정명은 대소문자를 안가림
 -- create user 계정명  identified by 비밀번호;
 create user gjjang identified by 1234;
+create user chun identified by 1234;
 --create user tjoeun identified by 1234;
 
 -- 권한 생성
@@ -40,7 +41,7 @@ create user gjjang identified by 1234;
     [표현법] GRANT 권한1, 권한2, ... TO  (계정명) ;
 
 */
---GRANT RESOURCE, CONNECT TO gjjang;
+--GRANT RESOURCE, CONNECT TO chun;
 
 -- USER 삭제
 --DROP USER 유저명  CASCAED;
@@ -49,6 +50,8 @@ create user gjjang identified by 1234;
 
 -- insert시 생성된 유저에게 테이블스페이스에 얼마만큼의 영역을 할당할 것인지 정해줘야함
 alter user gjjang defalut tablespace user quota unlimited on users;
+
+--alter user chun defalut tablespace user quota unlimited on users;
 -- 특정 용략만큼 정해서 할당
 alter user gjjang quota 30M on users;
 
