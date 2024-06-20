@@ -75,6 +75,7 @@ CREATE TABLE EMP_01 (
 -- 전체 사원들의 사번, 사원명, 부서명 조회
 SELECT EMP_ID, EMP_NAME, DEPT_TITLE
  FROM EMPLOYEE_COPY, DEPARTMENT
+ -- null 값까지 모두다 표현해야한다면 기준이되는애 반대쪽에 +를 붙여야한다
 WHERE DEPT_CODE = DEPT_ID(+); 
 
 INSERT INTO EMP_01 

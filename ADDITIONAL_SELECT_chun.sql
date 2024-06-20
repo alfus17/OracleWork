@@ -26,14 +26,34 @@ WHERE LENGTH(PROFESSOR_NAME)  != 3;
     단 , 교수 중 2000년 이후의 출생자는 없으며 출력 해더는 "교수이름",  "나이" 로 한다. 나이는  "만"으로 계산
 */
 
+SELECT PROFESSOR_NAME , EXTRACT(YEAR FROM SYSDATE) - TO_NUMBER( '19'||SUBSTR(PROFESSOR_SSN,1,2)) AS 나이 ,SUBSTR(PROFESSOR_SSN,8,1) 성별
+FROM TB_PROFESSOR
+WHERE SUBSTR(PROFESSOR_SSN,8,1) IN ('1' );
+
+
+-- 4.  교수들의 이름 중 성을 제외한 이름만 출력 , 출력헤더 이름 
+
+SELECT SUBSTR(PROFESSOR_NAME,2)
+FROM TB_PROFESSOR;
+
+
+-- 5. 춘 기술대학교의 재수생 입학자를 구하려고 한다 . 
+/*
+    이때, 19살 에 입학하면 재수를 하지 않은 것으로 간주
+*/
+
+SELECT STUDENT_NO, STUDENT_NAME,EXTRACT( YEAR FROM ENTRANCE_DATE) -  TO_NUMBER('19'||SUBSTR(STUDENT_SSN,1,2))
+FROM TB_STUDENT
+WHERE (EXTRACT( YEAR FROM ENTRANCE_DATE) -  TO_NUMBER('19'||SUBSTR(STUDENT_SSN,1,2)) ) > 18;
 
 
 
+-- 6. 2020년 크리스마스는 무슨 요일인가?
 
+SELECT TO_CHAR(TO_DATE('2020/12/25' , 'YY/MM/DD') ,'DAY' ) FROM DUAL; 
 
-
-
-
+-- 7.
+SELECT TO_CHAR ( TO_DATE('99/10/11' , 'YY/MM/DD',)
 
 
 
