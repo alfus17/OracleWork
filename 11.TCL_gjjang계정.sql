@@ -102,7 +102,7 @@ WHERE EMP_ID = 501;
 -- DDL 구문
 -- DDL 구문이 실행되는 순간 COMMIT  됨
 CREATE TABLE TEST(
-    TID NUMBER
+    TID NUMBER`
 );
 
 ROLLBACK;
